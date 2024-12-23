@@ -1,0 +1,34 @@
+name: "切换网卡网关"
+args:
+  name: "Lan1"
+
+shortcuts:
+  s1:
+    name: "使用DHCP"
+    commands:
+      - "netsh interface ip set address name={{ args.name }} source=dhcp"
+      - "netsh interface ip set dns name={{ args.name }} source=dhcp"
+      - "netsh interface ip show address name={{ args.name }}"
+    timeout: 5s
+
+  s2:
+    name: "手动设置IP和网关 192.168.5.10"
+    commands:
+      - "netsh interface ip set address name={{ args.name }} source=static addr=192.168.5.20 mask=255.255.255.0 gateway=192.168.5.10 gwmetric=10"
+      - "netsh interface ip set dns name={{ args.name }} source=static addr=192.168.5.10 register=primary validate=no"
+      - "netsh interface ip show address name={{ args.name }}"
+    timeout: 5s
+
+  s3:
+    name: "手动设置IP和网关 192.168.5.1"
+    commands:
+      - "netsh interface ip set address name={{ args.name }} source=static addr=192.168.5.20 mask=255.255.255.0 gateway=192.168.5.1 gwmetric=10"
+      - "netsh interface ip set dns name={{ args.name }} source=static addr=192.168.5.1 register=primary validate=no"
+      - "netsh interface ip show address name={{ args.name }}"
+    timeout: 5s
+
+  s4:
+    name: "显示当前IP和网关"
+    commands:
+      - "netsh interface ip show address name={{ args.name }}"
+    timeout: 5s

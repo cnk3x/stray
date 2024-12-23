@@ -1,0 +1,34 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - akavel
+  - asmv
+  - bingmaps
+  - connectaddress
+  - connectport
+  - energye
+  - fasttemplate
+  - getlantern
+  - gwmetric
+  - htmlindex
+  - listenaddress
+  - listenport
+  - loopimgalarm
+  - loopingalarm
+  - loopingcall
+  - netlink
+  - netsh
+  - portproxy
+  - rsrc
+  - samber
+  - shlex
+  - syso
+  - systray
+  - tidwall
+  - valyala
+  - vishvananda
+  - winsoundevent
+ignoreWords: []
+import: []
